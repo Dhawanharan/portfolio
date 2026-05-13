@@ -50,7 +50,7 @@ function App() {
     const formData = new FormData(event.target);
 
     // IMPORTANT: Replace this with your actual Web3Forms Access Key
-    formData.append("access_key", "YOUR_ACCESS_KEY_HERE");
+    formData.append("access_key", "63451702-5a8e-4591-95e4-b06d909bf245");
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
@@ -191,16 +191,16 @@ function App() {
               </p>
               <div className="hero-buttons">
                 <a href="#projects" className="btn btn-primary">View Projects</a>
-                <a href="#" className="btn btn-primary">
+                <a href="#" target="_blank" rel="noreferrer" className="btn btn-primary">
                   <Download size={18} /> Download Resume
                 </a>
                 <a href="#contact" className="btn btn-outline">Contact Me</a>
               </div>
 
               <div className="social-links">
-                <a href="https://github.com/Dhawanharan" className="social-icon" title="GitHub"><Github size={24} /></a>
-                <a href="https://lk.linkedin.com/in/dhawanharan" className="social-icon" title="LinkedIn"><Linkedin size={24} /></a>
-                <a href="mailto:dhawanmaha@gmail.com" className="social-icon" title="Email"><Mail size={24} /></a>
+                <a href="https://github.com/Dhawanharan" target="_blank" rel="noreferrer" className="social-icon" title="GitHub"><Github size={24} /></a>
+                <a href="https://lk.linkedin.com/in/dhawanharan" target="_blank" rel="noreferrer" className="social-icon" title="LinkedIn"><Linkedin size={24} /></a>
+                <a href="mailto:dhawanmaha@gmail.com" target="_blank" rel="noreferrer" className="social-icon" title="Email"><Mail size={24} /></a>
               </div>
             </div>
 
@@ -334,7 +334,7 @@ function App() {
 
         {/* Footer */}
         <footer style={{ textAlign: 'center', padding: '2rem 0', color: 'var(--text-secondary)' }}>
-          <p>© {new Date().getFullYear()} Dhawanharan Mahalingam. Built with React & Vite.</p>
+          <p>© {new Date().getFullYear()} Dhawanharan Mahalingam. Built with React.</p>
         </footer>
       </main>
     </>

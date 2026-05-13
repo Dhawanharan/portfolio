@@ -89,7 +89,12 @@ const SearchIntro = ({ onComplete }) => {
         )}
         
         {(phase === 'loading' || phase === 'exploding') && (
-          <div className="loader-ring"></div>
+          <div className="react-loader">
+            <div className="nucleus"></div>
+            <div className="orbital"></div>
+            <div className="orbital"></div>
+            <div className="orbital"></div>
+          </div>
         )}
         
         {/* Fake Cursor */}
