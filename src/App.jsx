@@ -8,6 +8,11 @@ import introVideo from './assets/intro.mp4';
 import bakerStreetVideo from './assets/221-B.mp4';
 import cryptoVideo from './assets/crypto system.mp4';
 import whiteboardVideo from './assets/whiteboard.mp4';
+import expertimg from './assets/expert.png';
+import chessimg from './assets/chess clock.png';
+import marainimg from './assets/marain.png';
+import lmsimg from './assets/lms.png';
+
 
 const Github = ({ size = 24 }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -31,7 +36,7 @@ const Typewriter = ({ text, delay = 100 }) => {
     if (currentIndex < text.length) {
       const timeout = setTimeout(() => {
         setCurrentText(prevText => prevText + text[currentIndex]);
-        setCurrentIndex(prevText => prevText + 1);
+        setCurrentIndex(prevIndex => prevIndex + 1);
       }, delay);
       return () => clearTimeout(timeout);
     }
@@ -81,6 +86,7 @@ function App() {
       title: "Smart Marine Safety System",
       description: "Engineered real-time tracking and weather intelligence system using WebSockets. Optimized MongoDB queries to ensure zero-delay alerts for fishermen.",
       tech: ["React Native", "React", "MongoDB", "Flask", "Java"],
+      image: marainimg,
       link: "#",
       github: "#"
     },
@@ -96,7 +102,7 @@ function App() {
       title: "Laptop Recommendation System",
       description: "A CLI based laptop recommendation system made using GNU prolog.",
       tech: ["GNU Prolog", "CLI"],
-      //video: whiteboardVideo,
+      image: expertimg,
       link: "#",
       github: "#"
     },
@@ -104,6 +110,7 @@ function App() {
       title: "LMS UI/UX Redesign",
       description: "Led the collaborative redesign of a Learning Management System, utilizing modern design principles to significantly improve user flow and accessibility.",
       tech: ["Figma", "UI/UX Design", "Prototyping"],
+      image: lmsimg,
       link: "#",
       github: "#"
     },
@@ -111,6 +118,7 @@ function App() {
       title: "Chess Clock App",
       description: "A modern, touch-friendly chess clock application featuring dynamic time controls and a full-screen, highly responsive dual-timer interface for competitive players.",
       tech: ["React Native", "TypeScript", "Node.js"],
+      image: chessimg,
       link: "#",
       github: "https://github.com/Dhawanharan/chess-clock"
     },
@@ -165,7 +173,7 @@ function App() {
     {
       title: "Startup Essentials Program",
       org: "UKI",
-      //link: "#"
+      link: "#"
     }
   ];
 
@@ -235,6 +243,12 @@ function App() {
                       loop
                       playsInline
                       className="project-video-preview"
+                    />
+                  ) : project.image ? (
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="project-image-preview"
                     />
                   ) : (
                     <>

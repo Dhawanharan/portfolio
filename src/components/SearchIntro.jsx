@@ -33,16 +33,16 @@ const SearchIntro = ({ onComplete }) => {
               setTimeout(() => {
                 setPhase('exploding');
                 
-                // End intro completely
+                // End intro completely - Guaranteed handoff to main app
                 setTimeout(() => {
                   onComplete();
-                }, 1000); // Wait for explosion animation
+                }, 900); // Wait for explosion animation to almost finish
                 
-              }, 2500); // Loading duration
+              }, 2000); // Optimized Loading duration
               
             }, 1200); // Cursor move duration
             
-          }, 1000); // Pause after typing completes
+          }, 800); // Pause after typing completes
         }
       }, 100); // Slower typing speed
       

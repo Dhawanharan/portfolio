@@ -70,6 +70,7 @@ section {
   text-align: center;
   font-weight: 800;
   background: linear-gradient(to right, #f8fafc, #94a3b8);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -405,11 +406,13 @@ section {
   position: relative;
 }
 
-.project-preview:has(video) {
+.project-preview:has(video),
+.project-preview:has(img) {
   border: none;
 }
 
-.project-video-preview {
+.project-video-preview,
+.project-image-preview {
   width: 100%;
   height: 100%;
   object-fit: cover;
