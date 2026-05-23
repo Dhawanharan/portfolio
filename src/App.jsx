@@ -12,6 +12,7 @@ import expertimg from './assets/expert.png';
 import chessimg from './assets/chess clock.png';
 import marainimg from './assets/marain.png';
 import lmsimg from './assets/lms.png';
+import nuavideo from './assets/nua-website.mp4';
 
 
 const Github = ({ size = 24 }) => (
@@ -97,6 +98,14 @@ function App() {
       video: bakerStreetVideo,
       link: "#",
       github: "https://github.com/Dhawanharan/sherlock_holmes_website"
+    },
+    {
+      title: "Nuwara Eliya Undergraduate Association Website",
+      description: "Developed and deployed a responsive web application for the Nuwara Eliya Undergraduate Association using React and Vercel, focusing on accessibility, usability, and organizational visibility.",
+      tech: ["React", "Vercel"],
+      video: nuavideo,
+      link: "https://nua-ug.vercel.app/",
+      github: "https://github.com/Dhawanharan/nua-website"
     },
     {
       title: "Laptop Recommendation System",
