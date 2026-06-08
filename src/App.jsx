@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Mail, ExternalLink, Trophy, Medal, Target, Award, Download, User, Video, Image as ImageIcon } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Mail, ExternalLink, Trophy, Medal, Target, Award, Download, User, Video, Image as ImageIcon, Shield, Network } from 'lucide-react';
 import ParticleBackground from './components/ParticleBackground';
 import WavySkills from './components/WavySkills';
 import SearchIntro from './components/SearchIntro';
+import CustomCursor from './components/CustomCursor';
+import Navbar from './components/Navbar';
+import TiltCard from './components/TiltCard';
 import profileImg from './assets/profile.png';
 import introVideo from './assets/intro.mp4';
 import bakerStreetVideo from './assets/221-B.mp4';
@@ -77,14 +81,26 @@ function App() {
   };
 
   const skills = [
-    "C++", "Java", "Python", "MongoDB", "Express.js", "React", "Node.js",
-    "React Native", "TypeScript", "Flask", "Cisco Packet Tracer", "Figma",
-    "Cryptography", "Git", "GitHub"
+    { name: "C++", iconClass: "devicon-cplusplus-plain colored" },
+    { name: "Java", iconClass: "devicon-java-plain colored" },
+    { name: "Python", iconClass: "devicon-python-plain colored" },
+    { name: "MongoDB", iconClass: "devicon-mongodb-plain colored" },
+    { name: "Express.js", iconClass: "devicon-express-original" },
+    { name: "React", iconClass: "devicon-react-original colored" },
+    { name: "Node.js", iconClass: "devicon-nodejs-plain colored" },
+    { name: "React Native", iconClass: "devicon-react-original colored" },
+    { name: "TypeScript", iconClass: "devicon-typescript-plain colored" },
+    { name: "Flask", iconClass: "devicon-flask-original" },
+    { name: "Cisco Packet Tracer", icon: <Network size={20} color="#0ea5e9" /> },
+    { name: "Figma", iconClass: "devicon-figma-plain colored" },
+    { name: "Cryptography", icon: <Shield size={20} color="#0ea5e9" /> },
+    { name: "Git", iconClass: "devicon-git-plain colored" },
+    { name: "GitHub", iconClass: "devicon-github-original" }
   ];
 
   const projects = [
     {
-      title: "Smart Marine Safety System",
+      title: "Smart Marine Safety System (Final Year Research Project)",
       description: "Engineered real-time tracking and weather intelligence system using WebSockets. Optimized MongoDB queries to ensure zero-delay alerts for fishermen.",
       tech: ["React Native", "React", "MongoDB", "Flask", "Java"],
       image: marainimg,
@@ -192,11 +208,18 @@ function App() {
 
   return (
     <>
+      <CustomCursor />
+      <Navbar />
       <ParticleBackground />
 
       <main className="container">
         {/* Hero Section */}
-        <section className="hero">
+        <motion.section
+          className="hero"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
           <div className="hero-split">
             <div className="hero-text-col">
               <h1 className="hero-title">
@@ -208,7 +231,7 @@ function App() {
               </p>
               <div className="hero-buttons">
                 <a href="#projects" className="btn btn-primary">View Projects</a>
-                <a href="#" target="_blank" rel="noreferrer" className="btn btn-primary">
+                <a href="/Dhawanharan_CV.pdf" download="Dhawanharan_CV.pdf" target="_blank" rel="noreferrer" className="btn btn-primary">
                   <Download size={18} /> Download Resume
                 </a>
                 <a href="#contact" className="btn btn-outline">Contact Me</a>
@@ -223,25 +246,36 @@ function App() {
 
             <div className="hero-image-col">
               <div className="hero-image-wrapper">
-                {/* Dynamically imported profile picture */}
                 <img src={profileImg} alt="Dhawanharan Mahalingam" />
               </div>
             </div>
           </div>
-        </section>
+        </motion.section>
 
         {/* Wavy Skills Section */}
-        <section id="skills">
+        <motion.section
+          id="skills"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+        >
           <h2 className="section-title">Technical Skills</h2>
           <WavySkills skills={skills} />
-        </section>
+        </motion.section>
 
         {/* Projects Section */}
-        <section id="projects">
+        <motion.section
+          id="projects"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+        >
           <h2 className="section-title">Featured Work</h2>
           <div className="projects-grid">
             {projects.map((project, index) => (
-              <div key={index} className="project-card">
+              <TiltCard key={index} className="project-card">
                 {/* Placeholder for future video/image preview */}
                 <div className="project-preview">
                   {project.video ? (
@@ -288,13 +322,19 @@ function App() {
                     </a>
                   )}
                 </div>
-              </div>
+              </TiltCard>
             ))}
           </div>
-        </section>
+        </motion.section>
 
         {/* Achievements & Certifications Section */}
-        <section id="achievements">
+        <motion.section
+          id="achievements"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+        >
           <div className="two-col-layout">
             <div className="column">
               <h2 className="section-title" style={{ textAlign: 'left', marginBottom: '2rem' }}>Achievements</h2>
@@ -329,10 +369,17 @@ function App() {
               </div>
             </div>
           </div>
-        </section>
+        </motion.section>
 
         {/* Contact Section */}
-        <section id="contact" style={{ marginBottom: '6rem' }}>
+        <motion.section
+          id="contact"
+          style={{ marginBottom: '6rem' }}
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+        >
           <h2 className="section-title">Get In Touch</h2>
           <div className="contact-container">
             <p style={{ textAlign: 'center', color: 'var(--text-secondary)', marginBottom: '2rem' }}>
@@ -353,7 +400,7 @@ function App() {
               {formStatus === 'error' && <p className="form-error">⚠️ Oops! Something went wrong. Please try again later.</p>}
             </form>
           </div>
-        </section>
+        </motion.section>
 
         {/* Footer */}
         <footer style={{ textAlign: 'center', padding: '2rem 0', color: 'var(--text-secondary)' }}>

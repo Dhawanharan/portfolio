@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Search, MousePointer2 } from 'lucide-react';
 import './SearchIntro.css';
+import TechClock from './TechClock';
 
 const SearchIntro = ({ onComplete }) => {
   const [phase, setPhase] = useState('entering'); // entering, typing, cursor-moving, loading, exploding
@@ -89,12 +90,7 @@ const SearchIntro = ({ onComplete }) => {
         )}
         
         {(phase === 'loading' || phase === 'exploding') && (
-          <div className="react-loader">
-            <div className="nucleus"></div>
-            <div className="orbital"></div>
-            <div className="orbital"></div>
-            <div className="orbital"></div>
-          </div>
+          <TechClock />
         )}
         
         {/* Fake Cursor */}

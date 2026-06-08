@@ -79,10 +79,18 @@ const WavySkills = ({ skills }) => {
                 style={{
                   animationDelay: `${index * 0.15}s`,
                   animationDuration: `${bobDuration}s`,
-                  '--bob-amp': `${bobAmplitude}px`
+                  '--bob-amp': `${bobAmplitude}px`,
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '10px'
                 }}
               >
-                {skill}
+                {skill.iconClass ? (
+                  <i className={skill.iconClass} style={{ fontSize: '1.2rem' }}></i>
+                ) : skill.icon ? (
+                  <span style={{ display: 'flex', alignItems: 'center' }}>{skill.icon}</span>
+                ) : null}
+                {skill.name}
               </div>
             </div>
           );
