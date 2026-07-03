@@ -227,7 +227,7 @@ function App() {
               </h1>
               <h2 className="hero-subtitle">BSc Computer Science Undergraduate</h2>
               <p className="hero-bio">
-                Full-Stack Developer passionate about building robust, data-driven web applications and scalable backend systems. Solving real-world problems through clean code and modern architecture.
+                Computer Science Undergraduate passionate about full-stack development, IoT, embedded systems, and UI/UX design. I enjoy building innovative, real-world solutions by combining software engineering, intelligent hardware, and user-centered experiences while continuously learning and collaborating through technology.
               </p>
               <div className="hero-buttons">
                 <a href="#projects" className="btn btn-primary">View Projects</a>
